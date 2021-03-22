@@ -1,0 +1,95 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <div id="one"></div>
+    <script>
+        class BMI extends React.Component{
+            render() {
+          return (
+            <input type='text/babel' id='first' >
+          );
+        }
+        }
+    </script>
+    
+</body>
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Hello</title>
+    <style>
+        .center{
+            margin: auto;
+            width: 30%;
+            border: 3px solid rgb(2, 2, 2);
+            padding: 10px;
+
+        }
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 30px 32px;
+            margin-right: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            
+        }
+    </style>
+  </head>
+  <body>
+    <div id="app" />
+    <script type="text/babel">
+
+      class Hello extends React.Component {
+        render() {
+          return (
+            <div class='center'>
+                <h1>BMI Index Calculator</h1>
+                <label>Weight(Kgs):</label>
+                <input type='text/babel' id='first' /><br /><br />
+                <label> Height(Ft):</label>
+                <input type='text/babel' id='second' /> <p> OR </p>
+                
+                <label> Height(Inches):</label>
+                <input type='text/babel' id='second' /><br /><br />
+
+                <button class='button'> Submit </button>
+                <h3> Result: </h3>
+                <input type='text/babel' id='Result' /> 
+            </div>
+            
+          );
+        }
+      }
+
+      
+
+      ReactDOM.render(<Hello />, document.querySelector("#app"));
+
+    </script>
+  </body>
+</html>
