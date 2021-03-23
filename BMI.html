@@ -65,25 +65,79 @@
     <script type="text/babel">
 
       class Hello extends React.Component {
+        constructor(props){
+          super(props)
+          this.state={
+            num1:0,
+            num2:0,
+            num3:0,
+            score:0
+
+          }
+        }
         render() {
           return (
             <div class='center'>
                 <h1>BMI Index Calculator</h1>
                 <label>Weight(Kgs):</label>
-                <input type='text/babel' id='first' /><br /><br />
-                <label> Height(Ft):</label>
-                <input type='text/babel' id='second' /> <p> OR </p>
+                <input type='text/babel' id='first' onChange={this.updateResponse1} value={this.state.num1}/><br /><br />
+                <label> Height(ft):</label>
+                <input type='text/babel' id='second' onChange={this.updateResponse2} value={this.state.num2} /> <br /><br />
+                <label> Height(in):</label>
+                <input type='text/babel' id='second' onChange={this.updateResponse3} value={this.state.num3} /> <br /><br />
                 
-                <label> Height(Inches):</label>
-                <input type='text/babel' id='second' /><br /><br />
+                
+                
 
-                <button class='button'> Submit </button>
+                <button class='button' onClick={()=>this.multiply()} > Submit</button>
                 <h3> Result: </h3>
-                <input type='text/babel' id='Result' /> 
+                <div id='mySum'>
+                  {this.state.score}
+                  
+                  </div> 
             </div>
             
           );
         }
+
+        updateResponse1=(event)=>{
+          this.setState({
+            num1: event.target.value
+          })
+        }
+
+        updateResponse2=(event)=>{
+          this.setState({
+            num2:event.target.value
+          })
+        }
+
+        updateResponse3=(event)=>{
+          this.setState({
+            num3:event.target.value
+          })
+        }
+        
+        
+        
+
+        multiply(){
+          var a= this.state.num1;
+          var b= this.state.num2 * 0.3048;
+          var c= this.state.num3 *0.0254;
+          var e= b + c;
+          
+          
+          var k = a / (e*e);
+          this.setState({
+            score:k
+          })
+          
+        }
+
+        
+
+
       }
 
       
